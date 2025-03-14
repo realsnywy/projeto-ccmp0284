@@ -7,11 +7,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="products")
+@Table(name = "products")
 @Setter
 @Getter
 public class Product {
-	
+
 	@Id
 	private Long id;
 	private String name;
