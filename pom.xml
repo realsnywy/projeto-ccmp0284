@@ -99,6 +99,16 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>11.4.0</version>
+				<configuration>
+					<url>jdbc:mysql://localhost:3306/primeshoes</url>
+					<user>shoes</user>
+					<password>shoes</password>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
