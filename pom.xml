@@ -107,8 +107,8 @@
 				<version>23.0.2</version>
 				<configuration>
 					<url>jdbc:mysql://localhost:3306/primeshoes</url>
-					<user>shoes</user>
-					<password>shoes</password>
+					<user>root</user>
+					<password></password>
 				</configuration>
 			</plugin>
 		</plugins>
