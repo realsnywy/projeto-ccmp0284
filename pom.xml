@@ -28,7 +28,7 @@
 		<url />
 	</scm>
 	<properties>
-		<java.version>23</java.version>
+		<java.version>24</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -79,7 +79,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>23.0.2</source>
+					<source>24.0.1</source>
 					<target></target>
 					<annotationProcessorPaths>
 						<path>
@@ -104,11 +104,11 @@
 			<plugin>
 				<groupId>org.flywaydb</groupId>
 				<artifactId>flyway-maven-plugin</artifactId>
-				<version>23.0.2</version>
+				<version>24.0.1</version>
 				<configuration>
 					<url>jdbc:mysql://localhost:3306/primeshoes</url>
-					<user>root</user>
-					<password></password>
+					<user>snywy</user>
+					<password>29042003</password>
 				</configuration>
 			</plugin>
 		</plugins>
