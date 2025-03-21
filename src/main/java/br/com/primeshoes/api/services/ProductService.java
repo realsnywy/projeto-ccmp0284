@@ -21,6 +21,7 @@ public class ProductService {
 	 * @return
 	 */
 	public Product store(Product product) {
+		/* product.setName("TESTE"); */
 		return productRepository.save(product);
 	}
 
