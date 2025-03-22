@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.primeshoes.api.dtos.ProductDTO;
 import br.com.primeshoes.api.entites.Product;
 import br.com.primeshoes.api.services.ProductService;
 
@@ -22,30 +23,13 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    /*
-     * public List<Product> list(int id) {
-     * System.out.println(id);
-     * List<Product> products = productService.getAll();
-     * return products;
-     * }
-     */
-
     @PostMapping
-    public ResponseEntity<Product> createProduct(@RequestBody Product product) {
-        return new ResponseEntity<>(productService.store(product), HttpStatus.CREATED);
+    public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductDTO productDTO) {
+        return new ResponseEntity<>(productService.store(productDTO), HttpStatus.CREATED);
     }
 
-    /* workbench (MANO, SEI LÁ COMO USAR O MYSQL KKKKKK) */
-
-    /*
-     * @PostMapping
-     * public Product createProduct(@RequestBody Product product) {
-     * return productService.store(product);
-     * }
-     */
-
     @GetMapping
-    public List<Product> listAll() {
+    public List<ProductDTO> listAll() {
         return productService.getAll();
     }
 }
