@@ -16,19 +16,20 @@ public class ProductService {
 	@Autowired
 	private ProductRepository productRepository;
 
-	/**
-	 * Save new product
-	 * 
-	 * @param product
-	 * @return
-	 */
 	public Product store(ProductDTO productDTO) {
 		Product product = ProductMapper.toEntity(productDTO);
 		return productRepository.save(product);
 	}
 
-	public List<Product> getAll() {
-		return productRepository.findAll();
+	public List<ProductDTO> getAll() {
+		return productRepository.findAll()
+				.stream()
+				.map(ProductMapper::toDTO)
+				.toList();
 	}
 
+	public Product findById(Long id) {
+		return productRepository.findById(id)
+				.orElseThrow(() -> new RuntimeException("Product not found with id: " + id));
+	}
 }

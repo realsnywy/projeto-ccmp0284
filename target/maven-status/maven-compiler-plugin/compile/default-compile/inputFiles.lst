@@ -1,0 +1,5 @@
+/home/snywy/Documents/GitHub/projeto-ccmp0284/src/main/java/br/com/primeshoes/api/ApiApplication.java
+/home/snywy/Documents/GitHub/projeto-ccmp0284/src/main/java/br/com/primeshoes/api/controllers/ProductController.java
+/home/snywy/Documents/GitHub/projeto-ccmp0284/src/main/java/br/com/primeshoes/api/entites/Product.java
+/home/snywy/Documents/GitHub/projeto-ccmp0284/src/main/java/br/com/primeshoes/api/repository/ProductRepository.java
+/home/snywy/Documents/GitHub/projeto-ccmp0284/src/main/java/br/com/primeshoes/api/services/ProductService.java
