@@ -27,11 +27,44 @@ public class CartItem {
         return this.quantity * 10.0f; // Preço fictício de 10.0 por unidade
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getCartId() {
+        return cartId;
+    }
+
+    public void setCartId(int cartId) {
+        this.cartId = cartId;
+    }
+
     public int getVariationId() {
         return variationId;
     }
 
+    public void setVariationId(int variationId) {
+        this.variationId = variationId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+        this.subtotal = calculateSubtotal(); // Recalculate subtotal when quantity changes
+    }
+
     public float getSubtotal() {
         return subtotal;
+    }
+
+    public void setSubtotal(float subtotal) {
+        this.subtotal = subtotal;
     }
 }

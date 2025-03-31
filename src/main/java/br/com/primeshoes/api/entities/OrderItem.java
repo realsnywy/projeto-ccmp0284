@@ -24,11 +24,43 @@ public class OrderItem {
         this.subtotal = subtotal;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
     public int getVariationId() {
         return variationId;
     }
 
+    public void setVariationId(int variationId) {
+        this.variationId = variationId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public float getSubtotal() {
         return subtotal;
+    }
+
+    public void setSubtotal(float subtotal) {
+        this.subtotal = subtotal;
     }
 }
