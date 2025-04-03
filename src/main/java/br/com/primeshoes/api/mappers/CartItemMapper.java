@@ -8,20 +8,20 @@ import org.springframework.stereotype.Component;
 public class CartItemMapper {
 
     public CartItemDTO toDTO(CartItem cartItem) {
-        CartItemDTO dto = new CartItemDTO();
-        dto.id = cartItem.getId();
-        dto.cartId = cartItem.getCartId();
-        dto.variationId = cartItem.getVariationId();
-        dto.quantity = cartItem.getQuantity();
-        dto.subtotal = cartItem.getSubtotal();
-        return dto;
+        return new CartItemDTO(
+            cartItem.getId(),
+            cartItem.getCartId(),
+            cartItem.getVariationId(),
+            cartItem.getQuantity(),
+            cartItem.getSubtotal()
+        );
     }
 
     public CartItem toEntity(CartItemDTO dto) {
-        CartItem cartItem = new CartItem(dto.variationId, dto.quantity);
-        cartItem.setId(dto.id);
-        cartItem.setCartId(dto.cartId);
-        cartItem.setSubtotal(dto.subtotal);
+        CartItem cartItem = new CartItem(dto.variationId(), dto.quantity());
+        cartItem.setId(dto.id());
+        cartItem.setCartId(dto.cartId());
+        cartItem.setSubtotal(dto.subtotal());
         return cartItem;
     }
 }

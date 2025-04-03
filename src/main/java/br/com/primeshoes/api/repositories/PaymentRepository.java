@@ -2,8 +2,9 @@ package br.com.primeshoes.api.repositories;
 
 import br.com.primeshoes.api.entities.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
+import java.util.Optional;
+
 public interface PaymentRepository extends JpaRepository<Payment, Integer> {
+    Optional<Payment> findByOrderId(int orderId);
 }

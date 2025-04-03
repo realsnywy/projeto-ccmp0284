@@ -22,7 +22,7 @@ public class CartService {
 
     public void addItemToCart(int userId, CartDTO.CartItemDTO itemDTO) {
         Cart cart = cartRepository.findByUserId(userId).orElse(new Cart(userId));
-        cart.addItem(itemDTO.variationId, itemDTO.quantity);
+        cart.addItem(itemDTO.variationId(), itemDTO.quantity());
         cartRepository.save(cart);
     }
 

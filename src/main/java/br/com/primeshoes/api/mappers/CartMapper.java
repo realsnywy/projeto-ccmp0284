@@ -10,28 +10,30 @@ import br.com.primeshoes.api.entities.CartItem;
 public class CartMapper {
 
     public CartDTO toDTO(Cart cart) {
-        CartDTO dto = new CartDTO();
-        dto.id = cart.getId();
-        dto.userId = cart.getUserId();
-        dto.items = cart.getItems().stream().map(item -> {
-            CartDTO.CartItemDTO itemDTO = new CartDTO.CartItemDTO();
-            itemDTO.variationId = item.getVariationId();
-            itemDTO.quantity = item.getQuantity();
-            itemDTO.subtotal = item.getSubtotal();
-            return itemDTO;
-        }).collect(Collectors.toList());
-        dto.totalPrice = cart.getTotalPrice();
-        return dto;
+        return new CartDTO(
+            cart.getId(),
+            cart.getUserId(),
+            cart.getItems().stream()
+                .map(item -> new CartDTO.CartItemDTO(
+                    item.getVariationId(),
+                    item.getQuantity(),
+                    item.getSubtotal()
+                ))
+                .collect(Collectors.toList()),
+            cart.getTotalPrice()
+        );
     }
 
     public Cart toEntity(CartDTO dto) {
-        Cart cart = new Cart(dto.userId);
-        cart.setId(dto.id);
-        cart.setItems(dto.items.stream().map(itemDTO -> {
-            CartItem item = new CartItem(itemDTO.variationId, itemDTO.quantity);
-            item.setSubtotal(itemDTO.subtotal);
-            return item;
-        }).collect(Collectors.toList()));
+        Cart cart = new Cart(dto.userId());
+        cart.setId(dto.id());
+        cart.setItems(dto.items().stream()
+            .map(itemDTO -> {
+                CartItem item = new CartItem(itemDTO.variationId(), itemDTO.quantity());
+                item.setSubtotal(itemDTO.subtotal());
+                return item;
+            })
+            .collect(Collectors.toList()));
         return cart;
     }
 }

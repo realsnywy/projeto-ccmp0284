@@ -8,18 +8,18 @@ import org.springframework.stereotype.Component;
 public class OrderItemMapper {
 
     public OrderItemDTO toDTO(OrderItem orderItem) {
-        OrderItemDTO dto = new OrderItemDTO();
-        dto.id = orderItem.getId();
-        dto.orderId = orderItem.getOrderId();
-        dto.variationId = orderItem.getVariationId();
-        dto.quantity = orderItem.getQuantity();
-        dto.subtotal = orderItem.getSubtotal();
-        return dto;
+        return new OrderItemDTO(
+            orderItem.getId(),
+            orderItem.getOrderId(),
+            orderItem.getVariationId(),
+            orderItem.getQuantity(),
+            orderItem.getSubtotal()
+        );
     }
 
     public OrderItem toEntity(OrderItemDTO dto) {
-        OrderItem orderItem = new OrderItem(dto.orderId, dto.variationId, dto.quantity, dto.subtotal);
-        orderItem.setId(dto.id);
+        OrderItem orderItem = new OrderItem(dto.orderId(), dto.variationId(), dto.quantity(), dto.subtotal());
+        orderItem.setId(dto.id());
         return orderItem;
     }
 }
