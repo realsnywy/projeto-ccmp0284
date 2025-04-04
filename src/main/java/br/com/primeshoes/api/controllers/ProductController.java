@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.primeshoes.api.dtos.ProductDTO;
+import br.com.primeshoes.api.entities.Product;
 import br.com.primeshoes.api.services.ProductService;
 
 @RestController
@@ -20,7 +21,7 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping
-    public ProductDTO store(@RequestBody ProductDTO productDTO) {
+    public Product store(@RequestBody ProductDTO productDTO) {
         return productService.store(productDTO);
     }
 

@@ -29,7 +29,7 @@ public class OrderMapper {
         order.setId(dto.id());
         order.setUserId(dto.userId());
         order.setItems(dto.items().stream().map(itemDTO -> {
-            OrderItem item = new OrderItem();
+            OrderItem item = new OrderItem(0, 0, 0, 0);
             item.setProductId(itemDTO.productId());
             item.setQuantity(itemDTO.quantity());
             return item;

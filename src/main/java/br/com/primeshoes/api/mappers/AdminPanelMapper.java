@@ -1,11 +1,10 @@
 package br.com.primeshoes.api.mappers;
 
 import br.com.primeshoes.api.dtos.AdminPanelDTO;
-import br.com.primeshoes.api.entities.AdminPanel;
 import org.springframework.stereotype.Component;
 import br.com.primeshoes.api.entities.User;
 import br.com.primeshoes.api.entities.Product;
-// import br.com.primeshoes.api.entities.Report;
+import br.com.primeshoes.api.entities.Report;
 
 import java.util.List;
 import java.util.stream.Collectors;

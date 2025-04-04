@@ -9,6 +9,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "order_items")
 public class OrderItem {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -16,6 +17,7 @@ public class OrderItem {
     private int variationId;
     private int quantity;
     private float subtotal;
+    private int productId;
 
     public OrderItem(int orderId, int variationId, int quantity, float subtotal) {
         this.orderId = orderId;
@@ -62,5 +64,13 @@ public class OrderItem {
 
     public void setSubtotal(float subtotal) {
         this.subtotal = subtotal;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 }
