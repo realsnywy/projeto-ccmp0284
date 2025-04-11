@@ -56,9 +56,9 @@ O projeto é desenvolvido utilizando Java com Spring Boot no backend e React com
 ### Backend
 
 - Spring Boot 3.4.4
-- Flyway Migration
-- MySQL Driver
-- Lombok
+  - Flyway Migration
+  - MySQL Driver
+  - Lombok
 
 ### Frontend
 
