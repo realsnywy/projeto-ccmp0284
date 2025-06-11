@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Projeto realizado durante a cadeira optativa Desenvolvimento Full Cycle.
+Projeto (inacabado) realizado durante a cadeira optativa Desenvolvimento Full Cycle.
 
 ## Estrutura do Projeto
 
